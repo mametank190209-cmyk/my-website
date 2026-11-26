@@ -278,7 +278,11 @@ body{
 
 @media screen and (max-width:480px){
 
-    .schedule{
+    body{
+        background-position: 60% center;
+    } 
+   
+   .schedule{
         padding:20px;
     }
 
