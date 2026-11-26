@@ -10,9 +10,20 @@
 
 body{
     font-family:"Yu Gothic",sans-serif;
-    background:#121212;
     color:#ffffff;
     overflow-x:hidden;
+
+    background:
+        linear-gradient(
+            rgba(18,18,18,0.85),
+            rgba(18,18,18,0.85)
+        ),
+        url("東京タワー夜景.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* =========================
@@ -321,11 +332,19 @@ body{
         font-size:18px;
     }
 
-    background:
-    linear-gradient(
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.75)
-    ),
-    url("東京タワー夜景.jpg");
+     .container {
+        position: relative;
+        z-index: 1;
+    }
 
+    .container::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("東京タワー夜景.jpg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.2; /* 透明度 */
+        z-index: -1;
+    }
 }
